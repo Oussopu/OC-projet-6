@@ -1,5 +1,5 @@
 function photographerTemplate(data) {
-    const { name, portrait } = data;
+    const { city, country, id, name, portrait, price, tagline} = data;
 
     const picture = `assets/photographers/${portrait}`;
 
