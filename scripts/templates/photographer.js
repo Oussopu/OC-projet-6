@@ -4,14 +4,32 @@ function photographerTemplate(data) {
     const picture = `assets/photographers/${portrait}`;
 
     function getUserCardDOM() {
-        const article = document.createElement( 'article' );
-        const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
-        const h2 = document.createElement( 'h2' );
-        h2.textContent = name;
-        article.appendChild(img);
-        article.appendChild(h2);
-        return (article);
+        const photographer = document.createElement( 'article' );
+
+        const photographerPicture = document.createElement( 'img' );
+        photographerPicture.setAttribute("src", picture)
+        photographerPicture.ariaLabel = `photo de ${name}`
+        const photographerName = document.createElement( 'h2' );
+        photographerName.textContent = name;
+        photographerName.ariaLabel = `${name}`
+        const photographerLocation = document.createElement( 'h3' );
+        photographerLocation.textContent = `${city}, ${country}`;
+        photographerLocation.ariaLabel = `${city}, ${country}`
+        const photographerTagline = document.createElement( 'h4' );
+        photographerTagline.textContent = tagline;
+        photographerTagline.ariaLabel = `${tagline}`;
+        const photographerPrice = document.createElement( 'p' );
+        photographerPrice.textContent = `${price}€/jour`;
+        photographerPrice.ariaLabel = `${price}€ par jour`;
+
+
+        photographer.appendChild(photographerPicture);
+        photographer.appendChild(photographerName);
+        photographer.appendChild(photographerLocation);
+        photographer.appendChild(photographerTagline);
+        photographer.appendChild(photographerPrice);
+
+        return (photographer);
     }
-    return { name, picture, getUserCardDOM }
+    return { city, country, id, name, picture, price, tagline, getUserCardDOM }
 }
