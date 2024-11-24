@@ -3,7 +3,7 @@ function photographerTemplate(data) {
 
     const picture = `assets/photographers/${portrait}`;
 
-    function getUserCardDOM() {
+     function getUserCardDOM() {
         const photographer = document.createElement( 'article' );
 
         const photographerPicture = document.createElement( 'img' );
@@ -20,7 +20,9 @@ function photographerTemplate(data) {
         photographerTagline.ariaLabel = `${tagline}`;
         const photographerPrice = document.createElement( 'p' );
         photographerPrice.textContent = `${price}€/jour`;
-        photographerPrice.ariaLabel = `${price}€ par jour`;
+
+        const photographerId = document.createElement( 'p' );
+        photographerId.textContent = `${id}`;
 
 
         photographer.appendChild(photographerPicture);
@@ -28,6 +30,12 @@ function photographerTemplate(data) {
         photographer.appendChild(photographerLocation);
         photographer.appendChild(photographerTagline);
         photographer.appendChild(photographerPrice);
+        photographer.appendChild(photographerId);
+
+        photographer.addEventListener("click", function() {
+            const id = photographerId.textContent
+            location.href = `/photographer.html?id=${id}`
+        })
 
         return (photographer);
     }
