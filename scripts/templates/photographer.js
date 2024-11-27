@@ -5,6 +5,7 @@ function photographerTemplate(data) {
 
      function getUserCardDOM() {
         const photographer = document.createElement( 'article' );
+        const picturePhotographerParent = document.createElement('picture-photographer-parent')
 
         const photographerPicture = document.createElement( 'img' );
         photographerPicture.setAttribute("src", picture)
@@ -20,12 +21,15 @@ function photographerTemplate(data) {
         photographerTagline.ariaLabel = `${tagline}`;
         const photographerPrice = document.createElement( 'p' );
         photographerPrice.textContent = `${price}€/jour`;
+        photographerPrice.ariaLabel = `${price}€/jour`;
 
         const photographerId = document.createElement( 'p' );
         photographerId.textContent = `${id}`;
 
 
-        photographer.appendChild(photographerPicture);
+        picturePhotographerParent.appendChild(photographerPicture);
+
+        photographer.appendChild(picturePhotographerParent);
         photographer.appendChild(photographerName);
         photographer.appendChild(photographerLocation);
         photographer.appendChild(photographerTagline);

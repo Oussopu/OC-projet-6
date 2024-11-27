@@ -42,29 +42,42 @@ h1 {
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 2.25rem;
+    font-family: "DM Sans";
     margin: 0;
 }
 
 .photographer_section article h3 {
     color: #901C1C;
     font-size: 0.8rem;
+    font-family: "DM Sans";
     margin: 0;
 }
 
 .photographer_section article h4 {
     font-size: 0.6rem;
+    font-family: "DM Sans";
     margin: 0;
 }
 
 .photographer_section article p {
     color: #757575;
     font-size: 0.5rem;
+    font-family: "DM Sans";
     margin: 0;
 }
 
-.photographer_section img {
+picture-photographer-parent {
     height: 200px;
     width: 200px;
     border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+picture-photographer-parent img {
+    height: 526px;
+    width: 358px;
 }
 
