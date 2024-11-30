@@ -102,6 +102,7 @@
     border-radius: 5px;
     width: 25vw;
     height: 300px;
+    object-fit: cover;
 }
 
 .contact_button {
