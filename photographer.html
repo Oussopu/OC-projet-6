@@ -9,12 +9,12 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="logo Fisheye" aria-label="logo Fisheye"/></a>
     </header>
     <main id="main">
       <div class="photograph-header">
         <div class="info-photographer"></div>
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button id="open-modal" class="contact_button">Contactez-moi</button>
         <div class="picture-photographer"></div>
       </div>
       <div class="media-section">
@@ -25,19 +25,51 @@
     <div id="contact_modal">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <h2>Contactez-moi <br>
+            <span class="photographer-name" ></span>
+          </h2>
+          <img class="close-modal" src="assets/icons/close.svg"/>
         </header>
-				<form>
+        
+				<form 
+          class="modal-form"
+          name="reserve"
+          method="get"
+        >
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="first-name">Prénom</label>
+						<input 
+            id="first-name"
+            type="text"
+            />
+            <div id="first-name-error">Veuillez entrez un prénom valide</div>
 					</div>
-          <button class="contact_button">Envoyer</button>
+					<div>
+						<label for="last-name">Nom</label>
+						<input
+            id="last-name"
+            type="text"
+            />
+            <div id="last-name-error">Veuillez entrez un nom valide</div>
+					</div>
+					<div>
+						<label for="email">Email</label>
+						<input
+            id="email"
+            type="email"
+            />
+            <div id="email-error">Veuillez entrez un email valide</div>
+					</div>
+					<div>
+						<label for="message">Votre Message</label>
+						<textarea id="message">
+            </textarea>
+					</div>
+          <button class="contact_button" type="submit">Envoyer</button>
 				</form>
 			</div>
 		</div>
     <script type="module" src="/scripts/pages/photographer.js"></script>
-    <script type="module" src="/scripts/utils/contactForm.js"></script>
+    <script type="module" src="/scripts/utils/manageModal.js"></script>
   </body>
 </html>
