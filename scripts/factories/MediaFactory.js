@@ -27,5 +27,20 @@ class MediaFactory {
     photographerMedia.forEach((mediaData) => {
       const media = MediaFactory.createMedia(mediaData);
       mediaSection.innerHTML += media.render();
-    });
+    })
+  };
+
+  export const findImageByIdFromMedia = async () => {
+    const data = await fetchData();
+    const imageId = getIdByQueryString();
+    const photographerMedia = data.media.filter(
+      (media) => media.photographerId === photographerId
+    );
+  
+    const mediaSection = document.querySelector(".media-section");
+  
+    photographerMedia.forEach((mediaData) => {
+      const media = MediaFactory.createMedia(mediaData);
+      mediaSection.innerHTML += media.render();
+    })
   };

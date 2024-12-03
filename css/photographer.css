@@ -111,6 +111,7 @@
     width: 25vw;
     height: 300px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .contact_button {
@@ -197,4 +198,56 @@ form textarea {
 
 #first-name-error, #last-name-error, #email-error, #message-error {
     display: none;
+}
+
+.light-box {
+    display: none;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.light-box-main {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-left, .arrow-right {
+    cursor: pointer;
+}
+
+.red-cross {
+    display: flex;
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    cursor: pointer;
+}
+
+.media-to-show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 95%;
+}
+
+.media-title {
+    font-family: "DM Sans";
+    font-size: 1.5rem;
+    color: #901C1C;
+}
+
+.media-to-show img , .media-to-show video {
+    border-radius: 5px;
+    max-width: 90%;
+    max-height: 80%;
 }
