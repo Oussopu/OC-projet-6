@@ -1,3 +1,7 @@
+body {
+    padding-bottom: 350px;
+}
+
 #contact_modal {
     display: none;
     justify-content: center;
@@ -75,8 +79,8 @@
     right: 36px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding-right: 30px;
+    justify-content: space-between;
+    padding: 0 30px;
 }
 
 .price-photographer p {
@@ -112,6 +116,48 @@
     height: 300px;
     object-fit: cover;
     cursor: pointer;
+}
+
+.media-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.media-likes {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.media-info img {
+    height: 19px;
+    width: 19px;
+    padding-left: 5px;
+}
+
+.like-button {
+    all: unset; 
+    cursor: pointer; 
+    align-items: center;
+    justify-content: center;
+}
+
+
+.like-button.liked .heart-empty {
+    display: none;
+}
+
+.like-button.liked .heart {
+    display: block;
+}
+
+.like-button:not(.liked) .heart-empty {
+    display: block;
+}
+
+.like-button:not(.liked) .heart {
+    display: none;
 }
 
 .contact_button {

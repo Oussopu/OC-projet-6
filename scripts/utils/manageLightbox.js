@@ -18,13 +18,14 @@ export const manageLightbox = () => {
     const allMedia = document.querySelectorAll(".media")
     const mediaList = Array.from(allMedia);
     let currentIndex = 0;
-    console.log(mediaList)
+    console.log(mediaList) 
 
     const showMedia = (i) => {
       currentIndex = i
       const media = mediaList[i]
       const mediaElement = media.firstElementChild; 
-      const mediaTitle = media.innerText
+      const mediaTitle = media.querySelector(".media-name").innerText;
+      console.log(mediaTitle);
       
       if (mediaElement.tagName === "IMG") {
         img.style.display ="flex"
@@ -58,8 +59,14 @@ export const manageLightbox = () => {
     }
 
     mediaList.forEach((media, index) => {
-      media.addEventListener("click", () => showMedia(index))
-    })
+      media.addEventListener("click", (event) => {
+        const target = event.target;
+
+        if (target === media.firstElementChild) {
+          showMedia(index);
+        }
+      });
+    });
 
     closeModal.addEventListener("click", closeLightbox)
     prevModal.addEventListener("click", prevMedia)
