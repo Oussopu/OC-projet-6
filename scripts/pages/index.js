@@ -1,20 +1,17 @@
-import { fetchData } from "../api/fetchData.js";
-import { photographerTemplate } from "../templates/photographerTemplate.js";
+import { PhotographerCard } from "../components/PhotographerCard.js"
+import { handlePhotographerCardClick } from "../services/handlePhotographerCardClick.js"
+import { fetchPhotographers } from "../api/fetchPhotographers.js"
 
-async function displayData(photographers) {
-  const photographersSection = document.querySelector(".photographer_section");
+document.addEventListener("DOMContentLoaded", async () => {
+    const data = await fetchPhotographers()
+    const photographers = data.photographers
 
-  photographers.forEach((photographer) => {
-    const photographerModel = photographerTemplate(photographer);
-    const userCardDOM = photographerModel.getUserCardDOM();
-    photographersSection.appendChild(userCardDOM);
-  });
-}
+    const photographersContainer = document.querySelector(".photographer_section")
 
-async function init() {
-  // Récupère les datas des photographes
-  const { photographers } = await fetchData();
-  displayData(photographers);
-}
+    photographers.forEach(photographer => {
+        const photographerCard = new PhotographerCard(photographer)
+        photographersContainer.insertAdjacentHTML("beforeend", photographerCard.render())
+    })
 
-init();
+    handlePhotographerCardClick(".photographer-card")
+})

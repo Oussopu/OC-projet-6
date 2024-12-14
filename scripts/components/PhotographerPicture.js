@@ -1,22 +1,10 @@
-import { findPhotographerById }  from "../api/photographerId.js"
+export class PhotographerPicture {
+    constructor(photographer) {
+        this.photographer = photographer
+    }
 
-export const picturePhotographerDOM = (photographer) => {
-    const picturePhotographer = document.querySelector(".picture-photographer");
-  
-    picturePhotographer.innerHTML = "";
-  
-    const infoPhotographerPicture = document.createElement("img");
-    infoPhotographerPicture.setAttribute(
-      "src",
-      `../assets/photographers/${photographer.portrait}`
-    );
-  
-    picturePhotographer.appendChild(infoPhotographerPicture);
-    return picturePhotographer;
-  };
-
-  export const displayPhotographerPicture = async () => {
-    const photographer = await findPhotographerById();
-    picturePhotographerDOM(photographer);
-  };
-  
+    render() {
+        return `
+          <img loading="lazy" src="assets/photographers/${this.photographer.portrait}">`
+    }
+}
