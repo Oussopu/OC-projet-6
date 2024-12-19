@@ -1,15 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Fisheye - photographe</title>
   </head>
   <body>
     <header>
-      <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="logo Fisheye" aria-label="logo Fisheye"/></a>
+      <a href="index.html"
+        ><img
+          src="assets/images/logo.png"
+          class="logo"
+          alt="logo Fisheye"
+          aria-label="logo Fisheye"
+      /></a>
     </header>
     <main id="main">
       <div class="photograph-header">
@@ -17,69 +26,75 @@
         <button id="open-modal" class="contact_button">Contactez-moi</button>
         <div class="picture-photographer"></div>
       </div>
-      <div class="media-section">
+      <div class="dropdown-main">
+        <label class="dropdown-title">Trier par</label>
+        <div class="dropdown-custom" id="dropdown-custom">
+          <div class="dropdown-selected">
+            <div>Popularité</div>
+            <img class="arrow-icon" src="assets/icons/arrowDropdown.svg" alt="Arrow" />
+          </div>
+          <ul class="dropdown-options">
+            <li data-value="popular">
+              Popularité
+              <img class="arrow-icon hidden" src="assets/icons/arrowDropdown.svg" alt="Arrow" />
+            </li>
+            <li data-value="date">
+              Date
+              <img class="arrow-icon hidden" src="assets/icons/arrowDropdown.svg" alt="Arrow" />
+            </li>
+            <li data-value="title">
+              Titre
+              <img class="arrow-icon hidden" src="assets/icons/arrowDropdown.svg" alt="Arrow" />
+            </li>
+          </ul>
+        </div>
       </div>
+      <div class="media-section"></div>
       <div class="price-photographer">
-        <div class="likes-photographer-container">
-        </div>
-        <div class="price-photographer-container">
-        </div>
+        <div class="likes-photographer-container"></div>
+        <div class="price-photographer-container"></div>
       </div>
     </main>
     <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi <br>
-            <span class="photographer-name" ></span>
+      <div class="modal">
+        <header>
+          <h2>
+            Contactez-moi <br />
+            <span class="photographer-name"></span>
           </h2>
-          <img class="close-modal" src="assets/icons/close.svg"/>
+          <img class="close-modal" src="assets/icons/close.svg" />
         </header>
-        
-				<form 
-          class="modal-form"
-          name="reserve"
-          method="get"
-        >
-					<div>
-						<label for="first-name">Prénom</label>
-						<input 
-            id="first-name"
-            type="text"
-            />
+
+        <form class="modal-form" name="reserve" method="get">
+          <div>
+            <label for="first-name">Prénom</label>
+            <input id="first-name" type="text" />
             <div id="first-name-error">Veuillez entrez un prénom valide</div>
-					</div>
-					<div>
-						<label for="last-name">Nom</label>
-						<input
-            id="last-name"
-            type="text"
-            />
+          </div>
+          <div>
+            <label for="last-name">Nom</label>
+            <input id="last-name" type="text" />
             <div id="last-name-error">Veuillez entrez un nom valide</div>
-					</div>
-					<div>
-						<label for="email">Email</label>
-						<input
-            id="email"
-            type="email"
-            />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" />
             <div id="email-error">Veuillez entrez un email valide</div>
-					</div>
-					<div>
-						<label for="message">Votre Message</label>
-						<textarea id="message">
-            </textarea>
-					</div>
+          </div>
+          <div>
+            <label for="message">Votre Message</label>
+            <textarea id="message"> </textarea>
+          </div>
           <button class="contact_button" type="submit">Envoyer</button>
-				</form>
-			</div>
-		</div>
+        </form>
+      </div>
+    </div>
     <div class="light-box">
       <div class="light-box-main">
-        <img class="arrow-left" src="assets/icons/arrowLeft.svg" alt="">
-        <div class="media-to-show">
-        </div>
-        <img class="red-cross" src="assets/icons/redCross.svg" alt="">
-        <img class="arrow-right" src="assets/icons/arrowRight.svg" alt="">
+        <img class="arrow-left" src="assets/icons/arrowLeft.svg" alt="" />
+        <div class="media-to-show"></div>
+        <img class="red-cross" src="assets/icons/redCross.svg" alt="" />
+        <img class="arrow-right" src="assets/icons/arrowRight.svg" alt="" />
       </div>
     </div>
     <script type="module" src="/scripts/pages/photographer.js"></script>

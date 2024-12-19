@@ -6,6 +6,7 @@ export class Video {
       this._video = data.video
       this._likes = data.likes
       this._liked = false
+      this._date = data.date
     }
   
     render() {

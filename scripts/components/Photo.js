@@ -6,6 +6,7 @@ export class Photo {
       this._image = data.image
       this._likes = data.likes
       this._liked = false
+      this._date = data.date
     }
   
     toggleLike() {
