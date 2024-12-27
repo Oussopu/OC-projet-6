@@ -6,7 +6,6 @@ export class Photo {
       this._image = data.image
       this._likes = data.likes
       this._liked = false
-      this._date = data.date
     }
   
     toggleLike() {
@@ -27,9 +26,9 @@ export class Photo {
             <p class="media-name">${this._title}</p>
             <div class="media-likes">
               <p class="likes-count" data-id="${this._id}">${this._likes}</p>
-              <button class="like-button">
-                <img class="heart-empty" src="assets/icons/heartEmpty.svg" alt="">
-                <img class="heart" src="assets/icons/heart.svg" alt="">
+              <button class="like-button" aria-pressed="${this._liked}" aria-label="${this._liked ? "Retirer un like" : "Ajouter un like"}">
+                <img class="heart-empty" src="assets/icons/heartEmpty.svg" alt="Icône cœur vide" aria-hidden="true">
+                <img class="heart" src="assets/icons/heart.svg" alt="Icône cœur plein" aria-hidden="true">
               </button>
             </div>
           </div>

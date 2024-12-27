@@ -13,9 +13,9 @@ export class PhotographerCard {
         const picture = `assets/photographers/${this.portrait}`
 
         return `
-        <article class="photographer-card" data-id="${this.id}">
+        <article class="photographer-card" data-id="${this.id} aria-labelledby="photographer-name-${this.id}">
             <div class="picture-photographer-parent">
-                <img src="${picture}" alt="Photo de ${this.name}" />
+                <img src="${picture}" alt="Photo de ${this.name} aria-labelledby="photographer-name-${this.id}" />
             </div>
             <h2>${this.name}</h2>
             <h3>${this.city}, ${this.country}</h3>

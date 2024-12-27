@@ -2,6 +2,10 @@ body {
     padding-bottom: 350px;
 }
 
+main {
+    padding-bottom: 50px;
+}
+
 #contact_modal {
     display: none;
     justify-content: center;
@@ -105,6 +109,7 @@ body {
 }
 
 .media {
+    width: 25vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,6 +128,13 @@ body {
     flex-direction: row;
     justify-content: space-between;
 }
+
+.media-name {
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
 .media-likes {
     display: flex;
@@ -171,6 +183,11 @@ body {
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#open-modal:hover,
+#open-modal:focus {
+    background-color: #DB8876;
 }
 
 .modal {
@@ -336,7 +353,7 @@ form textarea {
     left: 0;
     width: 100%;
     background-color: #901C1C;
-    border-radius:0;
+    border-radius: 0 0 5px 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     z-index: 10;
     list-style: none;
@@ -346,16 +363,12 @@ form textarea {
   
 .dropdown-options li {
     padding: 11px;
-    text-align: center;
+    text-align: left;
     color: white;
     font-size: 18px;
     cursor: pointer;
 }
-  
-.dropdown-options li:hover {
-    background-color: #6d1313;
-}
-  
+
 .dropdown-selected {
     width: 100%;
     display: flex;
@@ -364,6 +377,7 @@ form textarea {
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    border-radius: 5px;
     line-height: 70px;
 }
 

@@ -9,6 +9,7 @@ export const manageLightbox = () => {
   const video = document.createElement("video")
   const title = document.createElement("p")
   title.className = "media-title"
+
   mediaToShow.appendChild(img)
   mediaToShow.appendChild(video)
   mediaToShow.appendChild(title)
@@ -18,11 +19,11 @@ export const manageLightbox = () => {
 
     const allMedia = document.querySelectorAll(".media")
     const mediaList = Array.from(allMedia)
+    console.log(allMedia)
 
 
     if (mediaList.length > 0) {
       clearInterval(waitForMedia)
-      console.log(mediaList) 
     
       let currentIndex = 0
 
@@ -47,10 +48,15 @@ export const manageLightbox = () => {
 
         title.textContent = mediaTitle
         lightbox.style.display = "flex"
+        lightbox.setAttribute("aria-hidden", "false")
+        img.setAttribute("tabindex", "-1")
+        video.setAttribute("tabindex", "-1")
+        prevModal.focus()
       }
 
       const closeLightbox = () => {
         lightbox.style.display = "none"
+        lightbox.setAttribute("aria-hidden", "true")
       }
 
       const nextMedia = () => {
@@ -63,19 +69,37 @@ export const manageLightbox = () => {
         showMedia(currentIndex)
       }
 
-      mediaList.forEach((media, index) => {
-        media.addEventListener("click", (event) => {
-          const target = event.target
-
-          if (target === media.firstElementChild) {
-            showMedia(index)
-          }
-        })
+      document.addEventListener("click", (event) => {
+        if (event.target.closest(".like-button")) {
+          return
+        }
+      
+        if ((event.target.tagName === "IMG" || event.target.tagName === "VIDEO") && event.target.closest(".media")) {
+          const media = event.target.closest(".media")
+          const index = Array.from(document.querySelectorAll(".media")).indexOf(media)
+          showMedia(index)
+        }
       })
 
       closeModal.addEventListener("click", closeLightbox)
       prevModal.addEventListener("click", prevMedia)
       nextModal.addEventListener("click", nextMedia)
+
+      document.addEventListener("keydown", (event) => {
+        if (lightbox.style.display === "flex") {
+          switch (event.key) {
+            case "ArrowRight":
+              nextMedia()
+              break
+            case "ArrowLeft":
+              prevMedia()
+              break
+            case "Escape":
+              closeLightbox()
+              break
+          }
+        }
+      })
     }
   })
 }

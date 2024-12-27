@@ -5,6 +5,6 @@ export class PhotographerPrice {
 
   render() {
       return `
-        <p>${this.photographer.price}€/jour</p>`
+        <p aria-label="Tarif journalier du photographe">${this.photographer.price}€/jour</p>`
   }
 }

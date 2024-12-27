@@ -5,6 +5,6 @@ export class PhotographerPicture {
 
     render() {
         return `
-          <img loading="lazy" src="assets/photographers/${this.photographer.portrait}">`
+          <img loading="lazy" src="assets/photographers/${this.photographer.portrait}" alt="Portrait de ${this.photographer.name}">`
     }
 }

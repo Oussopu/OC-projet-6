@@ -20,6 +20,6 @@ export const updateTotalLikes = (mediaArray) => {
     const totalLikes = mediaArray.reduce((sum, media) => sum + (media._likes || media.likes || 0), 0)
     const infoPhotographerLikes = document.querySelector(".likes-photographer-container")
   
-      infoPhotographerLikes.innerHTML = `<p> ${totalLikes} <img src="assets/icons/heartBlack.svg" /></p>`
+      infoPhotographerLikes.innerHTML = `<p> ${totalLikes} <img src="assets/icons/heartBlack.svg" alt="Icône de cœur" aria-hidden="true" /></p>`
 }
   

@@ -1,4 +1,4 @@
-import js from "@eslint/js";
+import js from "@eslint/js"
 
 export default [
   js.configs.recommended,
@@ -10,6 +10,8 @@ export default [
         document: "readonly",
         console: "readonly",
         setTimeout: "readonly",
+        setInterval: "readonly", 
+        clearInterval: "readonly", 
         FormData: "readonly",
         location: "readonly",
         URLSearchParams: "readonly",
@@ -18,4 +20,4 @@ export default [
     },
     rules: {},
   },
-];
+]

@@ -8,7 +8,7 @@ const updateTotalLikes = (photos) => {
 
   if (globalLikesElement) {
       globalLikesElement.innerHTML = `
-      <p>${totalLikes} <img src="assets/icons/heartBlack.svg" alt="Total likes"></p>`
+      <p>${totalLikes} <img src="assets/icons/heartBlack.svg" alt="Icône de cœur" aria-hidden="true"></p>`
   }
 }
 

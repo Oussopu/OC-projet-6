@@ -10,6 +10,6 @@ export class PhotographerLikes {
     render() {
         const totalLikes = this.getTotalLikes()
         return `
-            <p>${totalLikes} <img src="assets/icons/heartBlack.svg" alt="Total likes"></p>`
+            <p>${totalLikes} <img src="assets/icons/heartBlack.svg" alt="Icône de cœur" aria-hidden="true"></p>`
     }
 }

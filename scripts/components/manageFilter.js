@@ -26,10 +26,14 @@ export async function manageFilter() {
     }
   }
 
+
+  selected.setAttribute("aria-controls", "dropdown-options")
+
   dropdown.addEventListener("click", (e) => {
     e.stopPropagation()
     isDropdownOpen = !isDropdownOpen
     optionsContainer.style.display = isDropdownOpen ? "block" : "none"
+    dropdown.style.borderRadius = isDropdownOpen ? "5px 5px 0 0" : "5px"
     arrowMain.classList.toggle("arrow-rotate", isDropdownOpen)
 
     options.forEach((option) => option.classList.remove("hidden-option"))
@@ -52,7 +56,16 @@ export async function manageFilter() {
       isDropdownOpen = false
       optionsContainer.style.display = "none"
       arrowMain.classList.remove("arrow-rotate")
+
+      dropdown.style.borderRadius = "5px"
     })
+
+    option.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        option.click()
+      }
+    })
+
   })
 
   document.addEventListener("click", () => {
