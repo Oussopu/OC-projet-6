@@ -1,3 +1,4 @@
+// fonction de tri par ordre de popularitee , date et ordre alphabetique 
 export const sortMedias = (mediaList, sortBy) => {
     switch (sortBy) {
       case "popular":

@@ -1,3 +1,4 @@
+// gere le comportement ouvrant et fermant de la modal
 export const handleModal = () => {
   const modal = document.getElementById("contact_modal")
   const openModal = document.getElementById("open-modal")

@@ -1,3 +1,4 @@
+//cree une instance de la classe video et renvoi un bloc HTML dynamique de ces donnees
 export class Video {
   constructor(data) {
     this._id = data.id
@@ -22,8 +23,10 @@ export class Video {
               class="like-button" 
               aria-pressed="${this._liked}" 
               aria-label="Ajouter un like pour ${this._title}">
-              <img class="heart-empty" src="assets/icons/heartEmpty.svg" alt="Icône cœur vide" aria-hidden="true">
-              <img class="heart" src="assets/icons/heart.svg" alt="Icône cœur plein" aria-hidden="true">
+              <img class="heart-empty" src="assets/icons/heartEmpty.svg" 
+              alt="Icône cœur vide" aria-hidden="true">
+              <img class="heart" src="assets/icons/heart.svg" 
+              alt="Icône cœur plein" aria-hidden="true">
             </button>
           </div>
         </div>

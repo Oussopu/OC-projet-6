@@ -1,3 +1,4 @@
+//cree une instance de la classe PhotographerCard et renvoi un bloc HTML dynamique de ces donnees
 export class PhotographerPrice {
   constructor(photographer) {
       this.photographer = photographer

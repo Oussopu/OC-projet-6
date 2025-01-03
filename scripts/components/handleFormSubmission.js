@@ -1,5 +1,6 @@
 import { validateForm } from "../utils/validateForm.js"
 
+// valide les donnees et renvoi les valeurs en console.log
 export const handleFormSubmission = () => {
     const form = document.querySelector(".modal-form")
 
@@ -17,9 +18,12 @@ export const handleFormSubmission = () => {
             email: emailInput
         })
 
-        document.getElementById("first-name-error").style.display = errors.firstName ? "flex" : "none"
-        document.getElementById("last-name-error").style.display = errors.lastName ? "flex" : "none"
-        document.getElementById("email-error").style.display = errors.email ? "flex" : "none"
+        document.getElementById("first-name-error").style.display = 
+        errors.firstName ? "flex" : "none"
+        document.getElementById("last-name-error").style.display = 
+        errors.lastName ? "flex" : "none"
+        document.getElementById("email-error").style.display = 
+        errors.email ? "flex" : "none"
 
         if (!errors.firstName && !errors.lastName &&! errors.email) {
             console.log(firstNameInput, lastNameInput, emailInput, messageInput)

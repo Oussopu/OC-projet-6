@@ -1,6 +1,7 @@
 import { fetchPhotographerById } from "../api/fetchPhotographerById.js"
 import { PhotographerPicture } from "../components/PhotographerPicture.js"
 
+// affiche ls photo d'un photographe
 export const displayPhotographerPicture = async () => {
     const photographer = await fetchPhotographerById()
 

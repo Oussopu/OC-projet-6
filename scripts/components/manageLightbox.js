@@ -1,3 +1,4 @@
+// gere le fonctionnement de la lightbox
 export const manageLightbox = () => {
   const lightbox = document.querySelector(".light-box")
   const mediaToShow = document.querySelector(".media-to-show")
@@ -19,7 +20,6 @@ export const manageLightbox = () => {
 
     const allMedia = document.querySelectorAll(".media")
     const mediaList = Array.from(allMedia)
-    console.log(allMedia)
 
 
     if (mediaList.length > 0) {
@@ -74,7 +74,8 @@ export const manageLightbox = () => {
           return
         }
       
-        if ((event.target.tagName === "IMG" || event.target.tagName === "VIDEO") && event.target.closest(".media")) {
+        if ((event.target.tagName === "IMG" || event.target.tagName === "VIDEO") 
+        && event.target.closest(".media")) {
           const media = event.target.closest(".media")
           const index = Array.from(document.querySelectorAll(".media")).indexOf(media)
           showMedia(index)

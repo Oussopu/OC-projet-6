@@ -1,4 +1,5 @@
- export async function fetchPhotographers() {
+// recupere les donnees du fichier JSON et les convertie en objet js
+export async function fetchPhotographers() {
     try {
       const response = await fetch("./data/photographers.json")
       if (!response.ok) {

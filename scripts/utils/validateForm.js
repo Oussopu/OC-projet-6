@@ -1,3 +1,4 @@
+//verrifie ce qui correspond a des erreurs d'un champ de formulaire 
 export function validateForm({firstName, lastName, email}) {
     const regexEmail = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+")
 

@@ -2,16 +2,19 @@ import { fetchPhotographers } from "../api/fetchPhotographers.js"
 import { getIdByQueryString } from "../utils/getIdByQueryString.js"
 import { Photo } from "../components/Photo.js"
 
+// gere les likes totaux de la page d'un photographe
 const updateTotalLikes = (photos) => {
   const totalLikes = photos.reduce((sum, photo) => sum + photo._likes, 0)
   const globalLikesElement = document.querySelector(".likes-photographer-container")
 
   if (globalLikesElement) {
       globalLikesElement.innerHTML = `
-      <p>${totalLikes} <img src="assets/icons/heartBlack.svg" alt="Icône de cœur" aria-hidden="true"></p>`
+      <p>${totalLikes} <img src="assets/icons/heartBlack.svg" 
+      alt="Icône de cœur" aria-hidden="true"></p>`
   }
 }
 
+// gere les likes d'une photo
 const updatePhotoLikesInDOM = (photo, isLiked) => {
   const likesCountElement = document.querySelector(`.likes-count[data-id="${photo._id}"]`)
   const likeButton = document.querySelector(`.media[data-id="${photo._id}"] .like-button`)
@@ -29,6 +32,7 @@ const updatePhotoLikesInDOM = (photo, isLiked) => {
   }
 }
 
+// ajoute ou supprime un like et rafraichie le compteur de like global 
 export const likesRefresh = async () => {
   const data = await fetchPhotographers()
   const mediaData = data.media

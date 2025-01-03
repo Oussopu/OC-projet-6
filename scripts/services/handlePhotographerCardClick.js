@@ -1,3 +1,4 @@
+// fonction qui permet de rediriger sur la page d'un photographe en particulier
 export const handlePhotographerCardClick = (containerSelector) => {
     const photographerCards = document.querySelectorAll(containerSelector);
 

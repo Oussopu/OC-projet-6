@@ -1,6 +1,7 @@
 import { manageMedias } from "../services/manageMedias.js"
 import { likesRefresh } from "../services/manageLikes.js"
 
+// gestion complete du menu deroulant contenant les filtres
 export async function manageFilter() {
   const dropdown = document.getElementById("dropdown-custom")
   const selected = dropdown.querySelector(".dropdown-selected")
